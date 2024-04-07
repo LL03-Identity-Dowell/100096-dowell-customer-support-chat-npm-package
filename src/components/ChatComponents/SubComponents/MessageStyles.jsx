@@ -1,0 +1,83 @@
+const styles = {
+  messageSender: {
+    fontWeight: "bold",
+  },
+  messageText: {
+    marginTop: "4px",
+  },
+  messageTime: {
+    fontSize: "12px",
+    color: "#777",
+  },
+  headerUser: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    gap: "10px",
+  },
+  headerBot: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    gap: "10px",
+  },
+  userMessage: {
+    backgroundColor: "#008B8B",
+    position: "relative",
+    color: "#ffffff",
+    borderRadius: "16px",
+    padding: "8px 15px",
+    marginBottom: "8px",
+    marginLeft: "2rem",
+    alignSelf: "flex-end",
+    display: "flex",
+    justifySelf: "center",
+    flexDirection: "column",
+    width: "max-content",
+    overflowWrap: "break-word",
+    maxWidth: "70%",
+  },
+  userMessageBeforeAfter: {
+    content: "",
+    position: "absolute",
+    bottom: "-7px",
+    width: "10px",
+    height: "10px",
+    backgroundColor: "#f0f0f0",
+    transform: "rotate(45deg)",
+    borderRadius: "50%",
+  },
+  userMessageAfter: {
+    right: "-5px",
+  },
+  botMessage: {
+    position: "relative",
+    backgroundColor: "#f0f0f0",
+    color: "#333",
+    borderRadius: "16px",
+    padding: "10px 15px",
+    marginBottom: "8px",
+    maxWidth: "70%",
+    alignSelf: "flex-start",
+    display: "flex",
+    justifyContent: "flex-start",
+    flexDirection: "column",
+    width: "max-content",
+    overflowWrap: "break-word",
+  },
+  botMessageBefore: {
+    content: "",
+    position: "absolute",
+    bottom: "-7px",
+    width: "10px",
+    height: "10px",
+    backgroundColor: "#f0f0f0",
+    transform: "rotate(45deg)",
+    borderRadius: "50%",
+  },
+  botMessageBeforeLeft: {
+    left: "-5px",
+  },
+};
+
+export default styles;
