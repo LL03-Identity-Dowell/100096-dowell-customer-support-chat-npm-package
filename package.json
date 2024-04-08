@@ -1,6 +1,6 @@
 {
-  "name": "chat-npm-package",
-  "private": true,
+  "name": "dowell-chat-box",
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
