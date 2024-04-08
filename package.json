@@ -1,5 +1,5 @@
 {
-  "name": "dowell-chat-box",
+  "name": "chat-npm-package",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -7,9 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview",
-    "test": "vitest run",
-    "watch": "vitest"
+    "preview": "vite preview"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -28,30 +26,5 @@
     "postcss": "^8.4.38",
     "tailwindcss": "^3.4.3",
     "vite": "^5.2.0"
-  },
-  "description": "This is the repo for dowell chat component npm package",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/LL03-Identity-Dowell/100096-dowell-customer-support-chat-npm-package.git"
-  },
-  "keywords": [
-    "react",
-    "components",
-    "chat",
-    "dowell"
-  ],
-  "author": "Melese Ayen - Dowell",
-  "license": "MIT",
-  "main": "./dist/react-library-scaffold.umd.js",
-  "module": "./dist/react-library-scaffold.es.js",
-  "exports": {
-    ".": {
-      "import": "./dist/react-library-scaffold.es.js",
-      "require": "./dist/react-library-scaffold.umd.js"
-    }
-  },
-  "bugs": {
-    "url": "https://github.com/LL03-Identity-Dowell/100096-dowell-customer-support-chat-npm-package/issues"
-  },
-  "homepage": "https://github.com/LL03-Identity-Dowell/100096-dowell-customer-support-chat-npm-package#readme"
+  }
 }

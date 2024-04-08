@@ -5,10 +5,9 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   build: {
     lib: {
-      entry: path.resolve("src", "src/components/index.jsx"),
-      name: "100096-dowell-customer-support-chat-npm-package",
-      fileName: (format) =>
-        `100096-dowell-customer-support-chat-npm-package.${format}.js`,
+      entry: path.resolve("src", "./components/index.jsx"),
+      name: "dowell-chat-box",
+      fileName: (format) => `dowell-chat-box.${format}.js`,
     },
     rollupOptions: {
       external: ["react", "react-dom"],
