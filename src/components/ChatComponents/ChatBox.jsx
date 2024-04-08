@@ -4,16 +4,6 @@ import styles from "./ChatBoxStyles.jsx";
 import Message from "./SubComponents/Message.jsx";
 import { RiMoonLine, RiSunLine } from "react-icons/ri";
 
-/**
- * Functional component representing the DowellChatBox component.
- * This component renders a chat box with input field and send button for sending messages.
- * @param {string} props.title - The title displayed in the DowellChatBox component.
- * @param {string} props.ContainerPosition - The positioning style of the DowellChatBox component. It accepts a CSS positioning style.
- * @param {string} props.inputStyle - The styling applied to the input field within the DowellChatBox component. It accepts a string representing CSS styles.
- * @param {string} props.buttonStyle - The styling applied to the send button within the DowellChatBox component. It accepts a string representing CSS styles.
- * @returns {JSX.Element} The rendered DowellChatBox component containing a chat interface.
- */
-
 const ChatBox = ({
   title,
   message,
@@ -21,7 +11,6 @@ const ChatBox = ({
   ContainerPosition,
   inputStyle,
   buttonStyle,
-  className,
   toggleModal,
 }) => {
   const [textMessage, setTextMessage] = useState("");
@@ -64,36 +53,90 @@ const ChatBox = ({
 
   return (
     <div
-      className={`${className} duration-700 `}
       style={{
         ...styles.dowellContainer,
         ...ContainerPosition,
         backgroundColor: `${darkMode ? "#395177" : "#ffffff"}`,
+        transitionDuration: "0.5s",
       }}
     >
       <div style={{ ...styles.headerContainer }}>
-        <h5 style={styles.chatTitle} className={`${darkMode && "text-white"}`}>
+        <h5
+          style={{
+            ...styles.chatTitle,
+            color: darkMode ? "#ffffff" : undefined,
+          }}
+        >
           Dowell Chat
         </h5>
-        <div className="flex justify-end items-end overflow-hidden h-10 min-w-20  pr-1 ">
-          <div className="flex items-center gap-x-2">
-            <div className="flex items-center hover:bg-slate-500 p-2 rounded-full duration-500">
-              <button className="focus:outline-none" onClick={toggleMode}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "flex-end",
+            overflow: "hidden",
+            minWidth: "20px",
+            paddingRight: "1px",
+            marginTop: "-10px",
+          }}
+        >
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "0.5rem",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+
+                padding: "2px",
+                borderRadius: "9999px",
+                transition: "background-color 0.5s",
+              }}
+            >
+              <button style={{ outline: "none" }} onClick={toggleMode}>
                 {darkMode ? (
-                  <RiMoonLine className="h-6 w-6 text-gray-300" />
+                  <RiMoonLine
+                    style={{
+                      height: "1.5rem",
+                      width: "1.5rem",
+                      color: "#feeeee",
+                    }}
+                  />
                 ) : (
-                  <RiSunLine className="h-6 w-6 text-yellow-400" />
+                  <RiSunLine
+                    style={{
+                      height: "1.5rem",
+                      width: "1.5rem",
+                      color: "#ffd700",
+                    }}
+                  />
                 )}
               </button>
             </div>
 
             <button
               onClick={toggleModal}
-              className="text-red-600 font-extrabold rounded-full h-10 w-10 text-center px-auto  transition-all duration-500 hover:bg-slate-500"
+              style={{
+                color: "#ff0000",
+                fontWeight: "bold",
+                borderRadius: "50%",
+                height: "3.7rem",
+                width: "2.7rem",
+                textAlign: "center",
+                padding: "auto",
+                transition: "all 0.5s",
+                backgroundColor: "transparent", // Ensure the button is visible
+                border: "none", // Ensure the button has no border
+                cursor: "pointer", // Ensure the button shows pointer cursor
+                fontWeight: "bold",
+              }}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 mx-auto"
+                style={{ height: "1.5rem", width: "1.5rem", margin: "auto" }}
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -130,16 +173,19 @@ const ChatBox = ({
           type="text"
           value={textMessage}
           onChange={(e) => setTextMessage(e.target.value)}
-          style={{ ...styles.inputField, ...inputStyle }}
+          style={{
+            ...styles.inputField,
+            ...inputStyle,
+            color: `${darkMode ? "#ffffff" : ""}`,
+          }}
           onKeyUp={handleKeyPress}
           placeholder="Type a message"
-          className={`${darkMode && "text-[#ffffff]"}`}
         />
         <button
           style={{ ...styles.sendButton, ...buttonStyle }}
           onClick={sendTextMessage}
         >
-          <IoIosSend className="hover:text-blue-600 duration-500" size={30} />
+          <IoIosSend style={{ ":hover": { color: "#007bff" } }} size={30} />
         </button>
       </div>
     </div>
